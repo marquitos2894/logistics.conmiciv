@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
+    <servlet>
+        <servlet-name>AgregarS</servlet-name>
+        <servlet-class>Controllers.AgregarS</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>QuitarS</servlet-name>
+        <servlet-class>Controllers.QuitarS</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>AgregarS</servlet-name>
+        <url-pattern>/Agregar</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>QuitarS</servlet-name>
+        <url-pattern>/Quitar</url-pattern>
+    </servlet-mapping>
+    
+
+    
+    <session-config>
+        <session-timeout>
+            60
+        </session-timeout>
+    </session-config>
+</web-app>

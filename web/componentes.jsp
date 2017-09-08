@@ -156,7 +156,7 @@
 
         </nav>
         </div>
-            <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
                     <h2>Data Tables</h2>
                     <ol class="breadcrumb">
@@ -199,9 +199,9 @@
                             </a>
                         </div>
                     </div>
-                    <div class="ibox-content">
+                 <div class="ibox-content">
 
-                        <div class="table-responsive">
+                  <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover dataTables-example" >
                     <thead>
                     <tr>
@@ -252,6 +252,9 @@
             </div>
             </div>
         </div>
+        
+                    
+        
         <div class="footer">
             <div class="pull-right">
                 10GB of <strong>250GB</strong> Free.
