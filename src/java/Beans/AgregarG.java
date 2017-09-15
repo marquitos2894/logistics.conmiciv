@@ -18,13 +18,15 @@ public class AgregarG {
         String  nparte2;
         int  Stock;
     
-        public AgregarG(int compo_cd, String compo_ds, String desc, String nparte, String nparte2, int Stock) {
+    
+        public AgregarG(int compo_cd ,String compo_ds,String desc,String nparte,String nparte2,int Stock) {
         this.compo_cd = compo_cd;
         this.compo_ds = compo_ds;
         this.desc = desc;
         this.nparte = nparte;
         this.nparte2 = nparte2;
         this.Stock = Stock;
+      
     }
     
     public AgregarG(){}
@@ -79,6 +81,5 @@ public class AgregarG {
     }
 
 
-    
     
 }

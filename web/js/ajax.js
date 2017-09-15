@@ -21,3 +21,42 @@ $(function(){
   
 });
 
+
+$(function(){
+   $('tr #AgregarItem').click(function(e){
+       e.preventDefault();
+       var element = $(this);
+       var idproducto = element.parent().find('#idarticulo').text();
+       $.ajax({
+           url : 'Agregar',
+           type : 'post',
+           data : {compo_cd : idproducto},
+           success: function(){
+               $('#div_tab_inv').append(element.parent().parent());
+            
+               
+           }           
+       })
+   });
+   
+  
+});
+
+
+
+//function Agregar_item(compo_cd){ // para filtro de oc , se envian varios datos
+//                        var parametros = {
+//                                "compo_cd" : compo_cd
+//                           
+//                        };
+//                        $.ajax({
+//                                data:  parametros,
+//                                url:   'Agregar',
+//                                type:  'post',
+//                             
+//                                success:  function (resp) {
+//                                     console.log(resp)
+//                                }
+//                        });
+//                }
+

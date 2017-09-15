@@ -64,7 +64,26 @@
 
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <!--script src="http://code.jquery.com/jquery-latest.js"/-->
+    
+        <!--script>
+	$(document).ready(function() {
+		$('#submit').click(function() {
+			var compo_cd = $('#compo_cd').val();
+			
+			// Si en vez de por post lo queremos hacer por get, cambiamos el $.post por $.get
 
+			$.ajax({
+                            type:'POST',
+                            data:{compo_cd : compo_cd},
+                            url: 'Agregar',
+                            success:function(responseText) {
+				$('#tabla').html(responseText);
+                            }
+			});
+		});
+	});
+    </script-->
 </head>
 
 <body>
@@ -243,8 +262,8 @@
                  <div class="ibox-content">
 
                   <div class="table-responsive">
-                    <form action="agregarproducto" method="post">
-                        <table class="table table-striped table-bordered table-hover dataTables-example" >
+                    <form  method="post">
+                        <table class="table table-striped table-bordered table-hover dataTables-example" id="tabla_agr" >
                         <thead>
                         <tr>
                             <th>#</th>
@@ -270,14 +289,16 @@
                             %> 
                         <tr class="gradeX">
                                 <td><%=x%></td>
-                              <td><%=bc.getCompo_ds()%></td>
+                                <td><%=bc.getCompo_ds()%></td>
                               <td><%=bc.getNparte()%></td>
                               <td><%=bc.getNparte2()%></td> 
                               <td><%=bc.getStock()%></td>
                               <td><%=bc.getUbicacion()%></td>
                               <td><%=bc.getAlm_ds()%></td>
                               <td><%=bc.getCat_ds()%></td>
-                              <td><a href="Agregar?compo_cd=<%=bc.getCompo_cd()%>&compo_ds=<%=bc.getCompo_ds()%>&desc=<%=bc.getDescripcion()%>&nparte=<%=bc.getNparte()%>&nparte2=<%=bc.getNparte2()%>&Stock=<%=bc.getStock()%>">Agregar </a></td>
+                              <td><a href="Agregar?compo_cd=<%=bc.getCompo_cd()%>&compo_ds=<%=bc.getCompo_ds()%>&desc=<%=bc.getDescripcion()%>&nparte=<%=bc.getNparte()%>&nparte2=<%=bc.getNparte2()%>&Stock=<%=bc.getStock()%>"> Agregar </a></td>
+                              <!--td><input type="button"  class="btn btn-info" id="Agre" value="Agregar"/></td>
+                              <td> <input type="button" id="submit" value="Añadir" /></td-->
                         
                         </tr>
                             <%}%>
@@ -292,9 +313,10 @@
                         </tr>
                         </tfoot>
                         </table>
+                        <div id="tabla"></div>
                     </form>
                         </div>
-
+                        
                     </div>
                 </div>
             </div>
@@ -373,7 +395,7 @@
                                           
                                             <div>
                                             <select  class="chosen-select" tabindex="2">
-                                                <option selected="selected" value="3">Seleccione Equipo</option>  
+                                                 <option selected="selected" value="3">Seleccione Equipo</option> 
                                                 <%for(Beans_equipo be : em.getAllEquipo_models()){
                                                  %>
                                                 <option value="<%=be.getEquipo_cd() %>"><%=be.getEquipo_ds()%></option>
@@ -424,7 +446,7 @@
                 </div>
 
             </div>
-                    
+                                
         
         <div class="footer">
             <div class="pull-right">
@@ -441,6 +463,10 @@
 
 
     <!-- Mainly scripts -->
+    
+    
+    
+    
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
@@ -451,6 +477,9 @@
     <!-- Custom and plugin javascript -->
     <script src="js/inspinia.js"></script>
     <script src="js/plugins/pace/pace.min.js"></script>
+
+    
+    
 
     <!-- Page-Level Scripts -->
     <script>
